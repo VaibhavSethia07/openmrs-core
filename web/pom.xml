@@ -128,7 +128,11 @@
          <artifactId>encoder</artifactId>
          <version>1.2.3</version>
       </dependency>
-   </dependencies>
+  <dependency>
+   <groupId>io.github.pixee</groupId>
+   <artifactId>java-security-toolkit</artifactId>
+  </dependency>
+ </dependencies>
 
    <build>
       <plugins>
