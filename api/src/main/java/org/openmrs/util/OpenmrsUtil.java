@@ -31,6 +31,7 @@ import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
+import java.security.SecureRandom;
 import java.sql.Timestamp;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -1586,7 +1587,7 @@ public class OpenmrsUtil {
 	 * @return file new file that is able to be written to
 	 */
 	public static File getOutFile(File dir, Date date, User user) {
-		Random gen = new Random();
+		Random gen = new SecureRandom();
 		File outFile;
 		do {
 			// format to print date in filename
@@ -1629,7 +1630,7 @@ public class OpenmrsUtil {
 	 * @return unique string
 	 */
 	public static String generateUid(Integer size) {
-		Random gen = new Random();
+		Random gen = new SecureRandom();
 		StringBuilder sb = new StringBuilder(size);
 		for (int i = 0; i < size; i++) {
 			int ch = gen.nextInt() * 62;

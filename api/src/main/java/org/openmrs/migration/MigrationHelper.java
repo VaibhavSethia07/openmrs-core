@@ -11,6 +11,7 @@ package org.openmrs.migration;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.security.SecureRandom;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -128,7 +129,7 @@ public class MigrationHelper {
 	@Deprecated
 	public static int importUsers(Document document) throws ParseException {
 		int ret = 0;
-		Random rand = new Random();
+		Random rand = new SecureRandom();
 		UserService us = Context.getUserService();
 		
 		List<Node> toAdd = new ArrayList<>();
@@ -215,7 +216,7 @@ public class MigrationHelper {
 		UserService us = Context.getUserService();
 		PersonService personService = Context.getPersonService();
 		List<Relationship> relsToAdd = new ArrayList<>();
-		Random rand = new Random();
+		Random rand = new SecureRandom();
 		for (String s : relationships) {
 			if (s.contains(":")) {
 				s = s.substring(s.indexOf(":") + 1);
