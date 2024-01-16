@@ -562,6 +562,7 @@
 			<dependency>
 				<groupId>io.github.pixee</groupId>
 				<artifactId>java-security-toolkit</artifactId>
+				
 				<version>${versions.java-security-toolkit}</version>
 			</dependency>
 		</dependencies>
@@ -1133,6 +1134,6 @@
 		<sonar.analysis.mode>publish</sonar.analysis.mode>
 
 		<argLine>-Duser.language=en -Duser.region=US -Xmx1g ${customArgLineForTesting} -Djava.locale.providers=COMPAT</argLine>
-		<versions.java-security-toolkit>1.0.7</versions.java-security-toolkit>
+		<versions.java-security-toolkit>1.1.1</versions.java-security-toolkit>
 	</properties>
 </project>
