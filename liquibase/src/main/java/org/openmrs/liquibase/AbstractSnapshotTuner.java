@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
@@ -228,7 +229,7 @@ public abstract class AbstractSnapshotTuner {
 		BufferedWriter writer = null;
 		try {
 			File file = Paths.get(path).toFile();
-			writer = new BufferedWriter(new FileWriter(file));
+			writer = Files.newBufferedWriter(file.toPath());
 			writer.write(content);
 		}
 		catch (IOException e) {
